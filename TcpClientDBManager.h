@@ -15,6 +15,8 @@ class TcpClientDbManager {
 
         TcpClientDbManager(TcpServerController*);
         ~TcpClientDbManager();
+
+        void StartTcpClientDbMgrInit();
 };
 
 #endif

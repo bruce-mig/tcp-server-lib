@@ -6,3 +6,5 @@ TcpClientDbManager::TcpClientDbManager(TcpServerController *tcp_ctrl) {
 }
 
 TcpClientDbManager::~TcpClientDbManager(){}
+
+void TcpClientDbManager::StartTcpClientDbMgrInit(){}
