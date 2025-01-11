@@ -17,3 +17,19 @@ TcpServerController::TcpServerController(
     this->tcp_client_db_mgr = new TcpClientDbManager(this);
     this->tcp_client_svc_mgr = new TcpClientServiceManager(this);
 }
+
+/** 
+ * Start the CAS thread
+ * Start the DRS thread
+ * Initialize the DBMS
+*/
+void TcpServerController::Start() {
+
+    this->tcp_new_conn_acc->StartTcpNewConnectionAcceptorThread();
+    this->tcp_client_svc_mgr->StartTcpClientServiceManagerThread();
+    this->tcp_client_db_mgr->StartTcpClientDbMgrInit();
+
+    std::cout<<"TCP Server is UP and RUNNING ["<< network_convert_ip_n_to_p(this->ip_addr,0)<<":"<<this->port_no<<"]"<<"\n";
+    std::cout<< "OK" << "\n";
+
+}
