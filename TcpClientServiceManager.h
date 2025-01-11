@@ -11,6 +11,8 @@ class TcpClientServiceManager {
         TcpServerController *tcp_ctrl;
         TcpClientServiceManager(TcpServerController*);
         ~TcpClientServiceManager();
+
+        void StartTcpClientServiceManagerThread();
  };
 
 
