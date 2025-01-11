@@ -5,3 +5,5 @@ TcpNewConnectionAcceptor::TcpNewConnectionAcceptor(TcpServerController *tcp_ctrl
 }
 
 TcpNewConnectionAcceptor::~TcpNewConnectionAcceptor(){}
+
+void TcpNewConnectionAcceptor::StartTcpNewConnectionAcceptorThread(){}
