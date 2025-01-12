@@ -9,7 +9,7 @@
 TcpServerController::TcpServerController(
     std::string ip_addr, uint16_t port_no, std::string name) {
 
-    this->ip_addr = network_covert_ip_p_to_n(ip_addr.c_str());
+    this->ip_addr = network_convert_ip_p_to_n(ip_addr.c_str());
     this->port_no = port_no;
     this->name = name;
 
