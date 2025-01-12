@@ -23,7 +23,7 @@ TcpNewConnectionAcceptor::~TcpNewConnectionAcceptor(){}
 static void* tcp_listen_for_new_connections(void *arg){
 	TcpNewConnectionAcceptor *tcp_new_conn_acc = (TcpNewConnectionAcceptor *)arg;
 
-	tcp_new_conn_acc->StartTcpNewConnectionAcceptorThreadIntenal();
+	tcp_new_conn_acc->StartTcpNewConnectionAcceptorThreadInternal();
 	return NULL;
 }
 
@@ -44,7 +44,7 @@ void TcpNewConnectionAcceptor::StartTcpNewConnectionAcceptorThread(){
  *  2. Invoke 'accept()' to accept new connections
  *  3. Notify the application for new connections
  */
-void TcpNewConnectionAcceptor::StartTcpNewConnectionAcceptorThreadIntenal(){
+void TcpNewConnectionAcceptor::StartTcpNewConnectionAcceptorThreadInternal(){
     
 	int opt = 1;
 	struct sockaddr_in server_addr;
