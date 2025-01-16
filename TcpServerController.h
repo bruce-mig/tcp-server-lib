@@ -7,6 +7,7 @@
 class TcpNewConnectionAcceptor;
 class TcpClientDbManager;
 class TcpClientServiceManager; // forward referencing classes
+class TcpClient;
 
 class TcpServerController {
     private:
@@ -25,6 +26,7 @@ class TcpServerController {
 
         void Start();
         void Stop();
+        void ProcessNewClient(TcpClient *tcp_client);
 
 };
 
