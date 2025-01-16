@@ -29,7 +29,7 @@ void TcpServerController::Start() {
     this->tcp_client_svc_mgr->StartTcpClientServiceManagerThread();
     this->tcp_client_db_mgr->StartTcpClientDbMgrInit();
 
-    std::cout<<"TCP Server is UP and RUNNING ["<< network_convert_ip_n_to_p(this->ip_addr,0)<<":"<<this->port_no<<"]"<<"\n";
-    std::cout<< "OK" << "\n";
+    std::cout<<"TCP Server is UP and RUNNING ["<< network_convert_ip_n_to_p(this->ip_addr,0)<<":"<<this->port_no<<"]\n";
+    std::cout<< "OK\n";
 
 }

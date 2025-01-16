@@ -1,5 +1,5 @@
 #include <sys/socket.h>
-#include <netinet/in.h> // for IPPRORO_TCP
+#include <netinet/in.h> // for IPPROTO_TCP
 #include <memory.h>
 #include <iostream>
 #include "TcpServerController.h"
