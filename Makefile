@@ -2,11 +2,12 @@ CC=g++
 CFLAGS=-g
 TARGET:testapp.exe
 LIBS=-lpthread
-OBJS=TcpClientDBManager.o 		 		\
-			TcpClientServiceManager.o 		 \
-			TcpNewConnectionAcceptor.o 	 \
-			TcpServerController.o 				  \
-			network_utils.o					
+OBJS=TcpClientDBManager.o 		 			\
+			TcpClientServiceManager.o		\
+			TcpNewConnectionAcceptor.o 	 	\
+			TcpServerController.o			\
+			network_utils.o					\
+			TcpClient.o
 
 testapp.exe:testapp.o ${OBJS}
 	${CC} ${CFLAGS} ${OBJS} testapp.o -o testapp.exe ${LIBS}
@@ -28,6 +29,9 @@ TcpServerController.o:TcpServerController.cpp
 
 network_utils.o:network_utils.cpp
 	${CC} ${CFLAGS} -c network_utils.cpp -o network_utils.o
+
+TcpClient.o:TcpClient.cpp
+	${CC} ${CFLAGS} -c TcpClient.cpp -o TcpClient.o
 
 clean:
 	rm -f *.o
