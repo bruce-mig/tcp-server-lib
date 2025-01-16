@@ -5,6 +5,7 @@
 #include "TcpServerController.h"
 #include "TcpNewConnectionAcceptor.h"
 #include "network_utils.h"
+#include "TcpClient.h"
 
 TcpNewConnectionAcceptor::TcpNewConnectionAcceptor(TcpServerController *tcp_ctrl) {
 	this->accept_fd = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
@@ -91,6 +92,16 @@ void TcpNewConnectionAcceptor::StartTcpNewConnectionAcceptorThreadInternal(){
 			std::cout << "Error in Accepting New Connections \n";
 			continue;
 		}
+
+		TcpClient *tcp_client = new TcpClient(
+			client_addr.sin_addr.s_addr,
+			client_addr.sin_port);
+
+		tcp_client->tcp_ctl = this->tcp_ctrl;
+		tcp_client->comm_fd = comm_sock_fd;
+
+		/* Tell the TCP Controller to further process the Client */
+		this->tcp_ctrl->ProcessNewClient(tcp_client);
 
 		std::cout << "Connection Accepted from Client [" 
 					 << network_convert_ip_n_to_p(htonl(client_addr.sin_addr.s_addr), 0) << ":" 
