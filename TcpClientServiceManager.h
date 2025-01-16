@@ -13,6 +13,7 @@ class TcpClientServiceManager {
         ~TcpClientServiceManager();
 
         void StartTcpClientServiceManagerThread();
+        void ClientFDStartListen(TcpClient *tcp_client);
  };
 
 

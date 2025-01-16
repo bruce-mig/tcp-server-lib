@@ -6,7 +6,6 @@
 #include "TcpNewConnectionAcceptor.h"
 #include "network_utils.h"
 
-
 TcpServerController::TcpServerController(
     std::string ip_addr, uint16_t port_no, std::string name) {
 
