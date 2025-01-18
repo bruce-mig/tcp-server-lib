@@ -100,6 +100,10 @@ void TcpNewConnectionAcceptor::StartTcpNewConnectionAcceptorThreadInternal(){
 		tcp_client->tcp_ctl = this->tcp_ctrl;
 		tcp_client->comm_fd = comm_sock_fd;
 
+		if(this->tcp_ctrl->client_connected) { // if function pointer is not null
+			this->tcp_ctrl->client_connected(this->tcp_ctrl, tcp_client);
+		}
+		
 		/* Tell the TCP Controller to further process the Client */
 		this->tcp_ctrl->ProcessNewClient(tcp_client);
 
