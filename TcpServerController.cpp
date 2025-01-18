@@ -51,3 +51,11 @@ void TcpServerController::SetServerNotifCallbacks(
     this->client_msg_recvd = client_msg_recvd;
 
 }
+
+void TcpServerController::Display(){
+    std::cout << "Server Name: " << this->name.c_str() << "\n";
+    std::cout << "Listening on: " << network_convert_ip_n_to_p(this->ip_addr,0) << ":"
+              << this->port_no << "\n";
+
+    this->tcp_client_db_mgr->DisplayClientDb();
+}

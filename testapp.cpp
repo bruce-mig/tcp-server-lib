@@ -29,6 +29,7 @@ int main(int argc, char *argv[]) {
                 
     server1->Start();
     scanf("\n");
+    server1->Display();
 
     return 0;
 }
